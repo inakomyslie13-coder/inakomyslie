@@ -1,1 +1,1 @@
-{"name":"Инакомыслие — РыжакеZ","short_name":"Инакомыслие","lang":"ru","start_url":"./","display":"standalone","background_color":"#080808","theme_color":"#080808","description":"Официальный сайт творческого проекта «Инакомыслие»."}
+{"name":"Инакомыслие — РыжакеZ","short_name":"Инакомыслие","lang":"ru","start_url":"./","scope":"./","display":"standalone","background_color":"#080808","theme_color":"#080808","description":"Официальный сайт творческого проекта «Инакомыслие».","icons":[{"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
