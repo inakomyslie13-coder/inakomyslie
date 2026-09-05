@@ -18,3 +18,16 @@
 @media(max-width:1300px){.album-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px 14px}}
 @media(max-width:1000px){.album-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:700px){.album-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.page-content:has(.album-grid){padding-top:18px}.album-body h2{font-size:18px}}
+
+/* Компактная шапка страниц альбомов и отсутствие кнопки возврата. */
+.page-content:has(.album-hero){padding-top:24px}
+.page-content:has(.album-hero) .album-hero{grid-template-columns:100px minmax(0,1fr);gap:18px;margin-top:8px;align-items:center}
+.page-content:has(.album-hero) .album-hero .album-cover{max-width:100px;width:100px}
+.page-content:has(.album-hero) .album-hero .album-cover-placeholder{max-width:100px;width:100px}
+.page-content:has(.album-hero) .album-hero h1{font-size:clamp(28px,3.4vw,44px);line-height:1;margin:0}
+.page-content:has(.album-hero) .album-hero .eyebrow{font-size:10px;letter-spacing:.2em;margin-bottom:3px}
+.page-content:has(.album-hero) .album-hero .songs-intro{font-size:13px;margin-top:5px}
+.page-content:has(.album-hero) .tracklist{margin-top:22px}
+.page-content:has(.album-hero) .tracklist>h2{font-size:22px;padding-bottom:7px}
+.page-content:has(.album-hero) .button{display:none}
+@media(max-width:700px){.page-content:has(.album-hero) .album-hero{grid-template-columns:75px minmax(0,1fr);gap:12px}.page-content:has(.album-hero) .album-hero .album-cover,.page-content:has(.album-hero) .album-hero .album-cover-placeholder{max-width:75px;width:75px}.page-content:has(.album-hero) .album-hero h1{font-size:clamp(24px,7vw,34px)}}
