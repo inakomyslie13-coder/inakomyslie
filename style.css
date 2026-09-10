@@ -19,41 +19,28 @@
 .page-content:has(.song-text) .song-body h2{font-size:1rem!important;line-height:1.08;padding:6px 10px}
 
 /* Компактность разделов: сначала убираем пустое место, шрифт не уменьшаем */
-.page-content{padding-top:9px;padding-bottom:9px}
-.page-content:has(.song-list) h1{margin:0 0 3px}
-.page-content:has(.song-list) .songs-intro{margin:0 0 3px}
-.page-content:has(.song-list) .song-list{margin-top:3px!important;gap:2px!important}
-.page-content:has(.song-list) .song-list:not(.compact-songs) .song-card,.compact-songs .song-card{min-height:36px!important;box-shadow:1px 1px 0 #321311}
-.page-content:has(.song-list) .song-list:not(.compact-songs) .song-number,.compact-songs .song-number{padding:3px 6px!important}
-.page-content:has(.song-list) .song-list:not(.compact-songs) .song-body h2,.compact-songs .song-body h2{padding:3px 8px!important;line-height:1.02}
-.page-content:has(.song-list) .song-list:not(.compact-songs) audio,.compact-songs audio{height:26px!important}
-.button{padding:6px 12px;margin-top:7px}
+.page-content{padding-top:9px;padding-bottom:9px}.page-content:has(.song-list) h1{margin:0 0 3px}.page-content:has(.song-list) .songs-intro{margin:0 0 3px}.page-content:has(.song-list) .song-list{margin-top:3px!important;gap:2px!important}.page-content:has(.song-list) .song-list:not(.compact-songs) .song-card,.compact-songs .song-card{min-height:36px!important;box-shadow:1px 1px 0 #321311}.page-content:has(.song-list) .song-list:not(.compact-songs) .song-number,.compact-songs .song-number{padding:3px 6px!important}.page-content:has(.song-list) .song-list:not(.compact-songs) .song-body h2,.compact-songs .song-body h2{padding:3px 8px!important;line-height:1.02}.page-content:has(.song-list) .song-list:not(.compact-songs) audio,.compact-songs audio{height:26px!important}.button{padding:6px 12px;margin-top:7px}
 
 /* Дискография: весь альбомный треклист стараемся уместить на один экран */
-.album-hero{gap:9px}
-.album-hero .album-cover-placeholder,.album-hero .album-cover{width:62px;height:62px;max-width:62px}
-.album-hero h1{font-size:clamp(24px,2.6vw,34px)}
-.tracklist{margin-top:5px}
-.tracklist>h2{font-size:17px;padding-bottom:2px}
-.track{grid-template-columns:34px minmax(0,1fr);gap:5px;padding:1px 4px;margin-top:1px;min-height:22px}
-.track-no{font-size:14px}
-.track h3{font-size:13px;line-height:1}
-.track audio{height:20px}
+.album-hero{gap:9px}.album-hero .album-cover-placeholder,.album-hero .album-cover{width:62px;height:62px;max-width:62px}.album-hero h1{font-size:clamp(24px,2.6vw,34px)}.tracklist{margin-top:5px}.tracklist>h2{font-size:17px;padding-bottom:2px}.track{grid-template-columns:34px minmax(0,1fr);gap:5px;padding:1px 4px;margin-top:1px;min-height:22px}.track-no{font-size:14px}.track h3{font-size:13px;line-height:1}.track audio{height:20px}
 
 /* Фото и клипы: компактная раскладка без изменения функции увеличения */
-.photo-grid,.photo-album-grid,.cards{gap:6px;margin-top:5px}
-.photo-grid figure{padding:3px}
-.photo-grid figcaption{padding:3px 2px 0;font-size:12px}
-.cards article{padding:8px;min-height:0}
-.clip-list{gap:6px;margin-top:5px}
-.video-placeholder{margin-top:6px;min-height:120px;padding:8px}
+.photo-grid,.photo-album-grid,.cards{gap:6px;margin-top:5px}.photo-grid figure{padding:3px}.photo-grid figcaption{padding:3px 2px 0;font-size:12px}.cards article{padding:8px;min-height:0}.clip-list{gap:6px;margin-top:5px}.video-placeholder{margin-top:6px;min-height:120px;padding:8px}
 
 /* История: только немного плотнее, без агрессивного уменьшения */
-.page-content:not(:has(.song-list)) .news-heading{padding:7px 0 6px}
-.page-content:not(:has(.song-list)) .news-list{gap:7px;padding-top:7px}
-.page-content:not(:has(.song-list)) .news-item{padding:9px 11px}
+.page-content:not(:has(.song-list)) .news-heading{padding:7px 0 6px}.page-content:not(:has(.song-list)) .news-list{gap:7px;padding-top:7px}.page-content:not(:has(.song-list)) .news-item{padding:9px 11px}
 
-@media(min-width:901px){
-  .page-content:has(.song-list){padding-left:2%;padding-right:2%}
-  .album-hero .album-cover-placeholder,.album-hero .album-cover{width:62px;height:62px}
-}
+@media(min-width:901px){.page-content:has(.song-list){padding-left:2%;padding-right:2%}.album-hero .album-cover-placeholder,.album-hero .album-cover{width:62px;height:62px}}
+
+/* ЕДИНЫЙ КАРКАС ВСЕХ РАЗДЕЛОВ */
+.home-layout,.page-layout{border-left:2px solid var(--line);border-right:2px solid var(--line)}
+.home-sidebar,.page-sidebar{border-top:0;border-bottom:0}
+.home-content,.page-content{border-top:0;border-bottom:0}
+/* Один заголовок раздела вместо дублирования: оставляем компактную строку ИНАКОМЫСЛИЕ • РАЗДЕЛ */
+.page-content>.eyebrow{display:block;margin:0 0 5px;color:#e04435;letter-spacing:.12em;font-size:12px;font-weight:700;line-height:1.1}
+.page-content>h1:not(.album-hero h1){display:none}
+/* Низ рамки почти вплотную к подписи */
+.home-page>footer,.page-footer,body>footer{max-width:1600px;width:100%;height:25px;min-height:25px;margin:0 auto;padding:2px 8px 3px;border-top:2px solid var(--rust2);border-left:2px solid var(--line);border-right:2px solid var(--line);border-bottom:0;color:var(--muted);display:flex;align-items:flex-end;justify-content:flex-start;line-height:1;font-size:11px;flex:0 0 25px}
+.home-page>footer span,.page-footer span,body>footer span{font-size:0}
+.home-page>footer span:before,.page-footer span:before,body>footer span:before{content:'(с_ Инакомыслие';font-size:11px;color:var(--muted)}
+@media(max-width:900px){.home-layout,.page-layout{border-left:0;border-right:0}.home-page>footer,.page-footer,body>footer{height:24px;min-height:24px;flex-basis:24px;padding:2px 6px 3px;border-left:2px solid var(--line);border-right:2px solid var(--line)}}
