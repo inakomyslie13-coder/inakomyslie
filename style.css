@@ -17,3 +17,43 @@
 
 /* Тексты: названия песен как в альбоме «8 марта» */
 .page-content:has(.song-text) .song-body h2{font-size:1rem!important;line-height:1.08;padding:6px 10px}
+
+/* Компактность разделов: сначала убираем пустое место, шрифт не уменьшаем */
+.page-content{padding-top:9px;padding-bottom:9px}
+.page-content:has(.song-list) h1{margin:0 0 3px}
+.page-content:has(.song-list) .songs-intro{margin:0 0 3px}
+.page-content:has(.song-list) .song-list{margin-top:3px!important;gap:2px!important}
+.page-content:has(.song-list) .song-list:not(.compact-songs) .song-card,.compact-songs .song-card{min-height:36px!important;box-shadow:1px 1px 0 #321311}
+.page-content:has(.song-list) .song-list:not(.compact-songs) .song-number,.compact-songs .song-number{padding:3px 6px!important}
+.page-content:has(.song-list) .song-list:not(.compact-songs) .song-body h2,.compact-songs .song-body h2{padding:3px 8px!important;line-height:1.02}
+.page-content:has(.song-list) .song-list:not(.compact-songs) audio,.compact-songs audio{height:26px!important}
+.button{padding:6px 12px;margin-top:7px}
+
+/* Дискография: весь альбомный треклист стараемся уместить на один экран */
+.album-hero{gap:9px}
+.album-hero .album-cover-placeholder,.album-hero .album-cover{width:62px;height:62px;max-width:62px}
+.album-hero h1{font-size:clamp(24px,2.6vw,34px)}
+.tracklist{margin-top:5px}
+.tracklist>h2{font-size:17px;padding-bottom:2px}
+.track{grid-template-columns:34px minmax(0,1fr);gap:5px;padding:1px 4px;margin-top:1px;min-height:22px}
+.track-no{font-size:14px}
+.track h3{font-size:13px;line-height:1}
+.track audio{height:20px}
+
+/* Фото и клипы: компактная раскладка без изменения функции увеличения */
+.photo-grid,.photo-album-grid,.cards{gap:6px;margin-top:5px}
+.photo-grid figure{padding:3px}
+.photo-grid figcaption{padding:3px 2px 0;font-size:12px}
+.cards article{padding:8px;min-height:0}
+.clip-list{gap:6px;margin-top:5px}
+.video-placeholder{margin-top:6px;min-height:120px;padding:8px}
+
+/* История: только немного плотнее, без агрессивного уменьшения */
+.page-content:not(:has(.song-list)) .news-heading{padding:7px 0 6px}
+.page-content:not(:has(.song-list)) .news-list{gap:7px;padding-top:7px}
+.page-content:not(:has(.song-list)) .news-item{padding:9px 11px}
+
+@media(min-width:901px){
+  .page-content:has(.song-list){padding-left:2%;padding-right:2%}
+  .album-hero .album-cover-placeholder,.album-hero .album-cover{width:62px;height:62px}
+}
