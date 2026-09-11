@@ -1,0 +1,9 @@
+.singles-page .album-hero{grid-template-columns:72px minmax(0,1fr);gap:11px;align-items:center;margin:0 0 6px}
+.singles-page .album-hero .album-cover-placeholder{width:72px;height:72px;max-width:72px}
+.singles-page .album-hero .singles-title{margin:0;color:#e04435;letter-spacing:.2em;font-size:16px;font-weight:700;line-height:1.2}
+.singles-page .album-hero .singles-title span{color:#e04435}
+.singles-page .album-hero .singles-title b{display:inline-block;color:#d39a35;font-weight:700;margin:0 .22em;vertical-align:middle;line-height:1;transform:translateY(-1px)}
+.singles-page .song-list{margin-top:4px!important}
+.singles-page .button{margin-top:24px}
+.singles-page .page-content{border-bottom:2px solid var(--line);padding-bottom:5px}
+@media(max-width:600px){.singles-page .album-hero{grid-template-columns:58px minmax(0,1fr);gap:9px}.singles-page .album-hero .album-cover-placeholder{width:58px;height:58px;max-width:58px}.singles-page .album-hero .singles-title{font-size:13px}.singles-page .button{margin-top:20px}}
