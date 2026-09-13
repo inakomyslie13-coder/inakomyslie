@@ -1,0 +1,41 @@
+name: Fix album breadcrumbs
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  fix:
+    if: ${{ hashFiles('.fix-breadcrumbs') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix breadcrumb placement
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for p in Path('.').glob('album-*.html'):
+              s=p.read_text(encoding='utf-8')
+              marker='<p class="eyebrow album-breadcrumb">'
+              if marker not in s:
+                  continue
+              a=s.index(marker)
+              b=s.index('</p>', a)+4
+              crumb=s[a:b]
+              s=s[:a]+s[b:]
+              hero=s.index('<div class="album-hero">')
+              old=s.find('<p class="eyebrow">', hero)
+              if old!=-1:
+                  end=s.find('</p>', old)+4
+                  s=s[:old]+crumb+s[end:]
+              p.write_text(s,encoding='utf-8')
+          Path('.fix-breadcrumbs').unlink(missing_ok=True)
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add album-*.html .fix-breadcrumbs
+          git diff --cached --quiet && exit 0
+          git commit -m "Исправить расположение хлебных крошек альбомов"
+          git push
