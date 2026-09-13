@@ -15,6 +15,8 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           for p in Path('.').glob('album-*.html'):
+              if '-photos' in p.name:
+                  continue
               s=p.read_text(encoding='utf-8')
               marker='<p class="eyebrow album-breadcrumb">'
               if marker not in s:
@@ -25,9 +27,9 @@ jobs:
               s=s[:a]+s[b:]
               hero=s.index('<div class="album-hero">')
               old=s.find('<p class="eyebrow">', hero)
-              if old!=-1:
-                  end=s.find('</p>', old)+4
-                  s=s[:old]+crumb+s[end:]
+              if old == -1:
+                  continue
+              s=s[:old]+crumb+s[old:]
               p.write_text(s,encoding='utf-8')
           Path('.fix-breadcrumbs').unlink(missing_ok=True)
           PY
