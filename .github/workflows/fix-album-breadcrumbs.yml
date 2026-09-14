@@ -1,4 +1,4 @@
-name: Fix album breadcrumbs
+name: Remove album details
 on:
   push:
     branches: [main]
@@ -9,27 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Fix breadcrumb placement
+      - name: Remove album details
         if: ${{ hashFiles('.fix-breadcrumbs') != '' }}
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
           for p in Path('.').glob('album-*.html'):
               if '-photos' in p.name:
                   continue
               s=p.read_text(encoding='utf-8')
-              marker='<p class="eyebrow album-breadcrumb">'
-              if marker not in s:
+              if 'album-breadcrumb' not in s:
                   continue
-              a=s.index(marker)
-              b=s.index('</p>', a)+4
-              crumb=s[a:b]
-              s=s[:a]+s[b:]
-              hero=s.index('<div class="album-hero">')
-              old=s.find('<p class="eyebrow">', hero)
-              if old == -1:
-                  continue
-              s=s[:old]+crumb+s[old:]
+              s=re.sub(r'<p class="eyebrow album-breadcrumb">.*?</p>', '', s, flags=re.S)
+              s=re.sub(r'<style>[^<]*\.album-breadcrumb[^<]*</style>', '', s, flags=re.S)
               p.write_text(s,encoding='utf-8')
           Path('.fix-breadcrumbs').unlink(missing_ok=True)
           PY
@@ -40,5 +33,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add album-*.html .fix-breadcrumbs
           git diff --cached --quiet && exit 0
-          git commit -m "Исправить расположение хлебных крошек альбомов"
+          git commit -m "Убрать детали с альбомных страниц"
           git push
