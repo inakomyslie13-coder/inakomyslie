@@ -1,4 +1,4 @@
-name: Remove album details
+name: Remove section prefixes
 on:
   push:
     branches: [main]
@@ -9,21 +9,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Remove album details
+      - name: Remove section prefixes
         if: ${{ hashFiles('.fix-breadcrumbs') != '' }}
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
+
+          # Album pages: remove old breadcrumb blocks where they still exist.
           for p in Path('.').glob('album-*.html'):
               if '-photos' in p.name:
                   continue
               s=p.read_text(encoding='utf-8')
-              if 'album-breadcrumb' not in s:
-                  continue
               s=re.sub(r'<p class="eyebrow album-breadcrumb">.*?</p>', '', s, flags=re.S)
-              s=re.sub(r'<style>[^<]*\.album-breadcrumb[^<]*</style>', '', s, flags=re.S)
+              s=re.sub(r'<style>[^<]*\\.album-breadcrumb[^<]*</style>', '', s, flags=re.S)
               p.write_text(s,encoding='utf-8')
+
+          # Main sections: displayed heading becomes only the section name.
+          replacements = {
+              'history.html': 'ИСТОРИЯ',
+              'clips.html': 'КЛИПЫ',
+              'contact.html': 'СВЯЗЬ',
+          }
+          for name, label in replacements.items():
+              p=Path(name)
+              if p.exists():
+                  s=p.read_text(encoding='utf-8')
+                  s=re.sub(r'<p class="eyebrow">ИНАКОМЫСЛИЕ\\s*•\\s*'+label+r'</p>', '<p class="eyebrow">'+label+'</p>', s, flags=re.I)
+                  p.write_text(s,encoding='utf-8')
+
+          # Photo/Text sections: remove the first label and first separator dot.
+          for name in ('photos.html','texts.html'):
+              p=Path(name)
+              if p.exists():
+                  s=p.read_text(encoding='utf-8')
+                  s=re.sub(r'<span class="album-name">Инакомыслие</span>\\s*<b>●</b>\\s*', '', s, flags=re.I)
+                  p.write_text(s,encoding='utf-8')
+
           Path('.fix-breadcrumbs').unlink(missing_ok=True)
           PY
       - name: Commit fix
@@ -31,7 +53,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add album-*.html .fix-breadcrumbs
+          git add album-*.html history.html clips.html contact.html photos.html texts.html .fix-breadcrumbs
           git diff --cached --quiet && exit 0
-          git commit -m "Убрать детали с альбомных страниц"
+          git commit -m "Убрать Инакомыслие и первый кружок из разделов"
           git push
