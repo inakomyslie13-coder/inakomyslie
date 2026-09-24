@@ -28,3 +28,5 @@
 
 /* Утверждённые стили страниц, вынесенные из HTML */
 .history-title{color:#fff!important;margin:0 0 10px!important}.history-text{max-width:900px;background:#fff!important;color:#000!important;padding:28px 32px;box-sizing:border-box;font-size:17px;line-height:1.7}.history-text p{margin:0;text-indent:2em}.history-text p+p{margin-top:.35em}@media(max-width:600px){.history-text{padding:20px;font-size:16px;line-height:1.65}}
+
+.album-covers-gallery-page .button{margin-top:8px!important;margin-bottom:4px!important;padding:4px 10px!important;font-size:11px!important;line-height:1.1!important;white-space:nowrap!important;max-width:100%!important;width:max-content!important;box-sizing:border-box!important}.album-covers-gallery-page .photo-album-grid{margin-top:6px!important;gap:8px 10px!important}@media(max-width:600px){.album-covers-gallery-page .button{font-size:10px!important;padding:4px 8px!important}.album-covers-gallery-page .photo-album-grid{gap:7px 6px!important}}
