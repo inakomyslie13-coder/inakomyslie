@@ -40,3 +40,6 @@
   .clip-list .youtube-link,.clip-list .clip-note{font-size:9px!important;line-height:1!important;margin:0 2px!important}
   .clip-play{width:28px!important;height:28px!important;font-size:13px!important;border-width:1px!important;box-shadow:0 0 0 2px rgba(8,8,8,.45),2px 2px 0 rgba(0,0,0,.65)!important}
 }
+
+/* Заголовок Ленты новостей — точно такой же шрифт, как заголовок Истории */
+.home-content .history-title{font-family:'Permanent Marker',cursive!important;font-size:clamp(34px,4.5vw,54px)!important;font-weight:400!important;line-height:.95!important;color:#fff!important;text-shadow:2px 2px 0 #3d110e!important}
