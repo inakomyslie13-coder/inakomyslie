@@ -55,3 +55,83 @@
   .clips-page>.clip-list{flex:1 1 auto!important;height:auto!important;min-height:0!important;overflow:hidden!important;grid-template-columns:1fr!important;grid-template-rows:repeat(10,minmax(0,1fr))!important;gap:3px!important;margin-top:5px!important}
   .clips-page>.clip-list>.clip-card{min-height:0!important;height:auto!important;overflow:hidden!important}
 }
+
+
+/* Клипы — как альбомы: компактная сетка в ряд */
+@media(min-width:1301px){
+  .clips-page>.clip-list{
+    display:grid!important;
+    grid-template-columns:repeat(10,minmax(0,1fr))!important;
+    grid-template-rows:none!important;
+    gap:12px 14px!important;
+    height:auto!important;
+    flex:0 0 auto!important;
+    overflow:visible!important;
+    margin-top:10px!important;
+  }
+  .clips-page>.clip-list>.clip-card{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    text-align:center!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    overflow:visible!important;
+    gap:0!important;
+  }
+  .clips-page>.clip-list .clip-preview{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:16/9!important;
+    grid-row:auto!important;
+  }
+  .clips-page>.clip-list .clip-title{
+    width:100%!important;
+    margin:5px 1px 0!important;
+    font-family:Oswald,Arial,sans-serif!important;
+    font-size:13px!important;
+    line-height:1.15!important;
+    white-space:normal!important;
+    overflow:hidden!important;
+    display:-webkit-box!important;
+    -webkit-line-clamp:2!important;
+    -webkit-box-orient:vertical!important;
+    text-overflow:ellipsis!important;
+  }
+  .clips-page>.clip-list .youtube-link,
+  .clips-page>.clip-list .clip-note{
+    width:100%!important;
+    margin:2px 1px 0!important;
+    font-size:9px!important;
+    line-height:1.1!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .clips-page>.clip-list .clip-play{
+    width:34px!important;
+    height:34px!important;
+    font-size:15px!important;
+  }
+}
+@media(min-width:1001px) and (max-width:1300px){
+  .clips-page>.clip-list{
+    display:grid!important;
+    grid-template-columns:repeat(9,minmax(0,1fr))!important;
+    grid-template-rows:none!important;
+    gap:10px 12px!important;
+    height:auto!important;
+    flex:0 0 auto!important;
+    overflow:visible!important;
+    margin-top:10px!important;
+  }
+  .clips-page>.clip-list>.clip-card{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important;width:100%!important;height:auto!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
+  .clips-page>.clip-list .clip-preview{width:100%!important;height:auto!important;aspect-ratio:16/9!important;grid-row:auto!important}
+  .clips-page>.clip-list .clip-title{width:100%!important;margin:5px 1px 0!important;font-size:12px!important;line-height:1.15!important;white-space:normal!important;overflow:hidden!important;display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important}
+  .clips-page>.clip-list .youtube-link,.clips-page>.clip-list .clip-note{width:100%!important;margin:2px 1px 0!important;font-size:8px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+}
