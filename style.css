@@ -695,3 +695,20 @@
 
 .clips-page .clip-preview{position:relative}
 .clips-page .clip-preview{position:relative}.clips-page .clip-controls{position:absolute;left:0;right:0;bottom:0;height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;background:linear-gradient(transparent,rgba(0,0,0,.82));opacity:0;pointer-events:none;transition:opacity .15s;z-index:5}.clips-page .clip-preview:hover .clip-controls,.clips-page .clip-preview.playing .clip-controls{opacity:1;pointer-events:auto}.clips-page .clip-controls button{border:0;background:transparent;color:#fff;padding:0;width:34px;height:34px;font-size:20px;line-height:34px;cursor:pointer;text-shadow:1px 1px 2px #000}.clips-page .clip-control-play{margin-right:auto}.clips-page .clip-fullscreen{margin-left:auto}
+
+/* Связь — карточки страниц */ 
+.contact-page .contact-list{display:flex;flex-direction:column;gap:14px;margin-top:22px;max-width:820px}
+.contact-page .contact-card{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;align-items:center;padding:12px 14px;border:1px solid var(--line);background:#11100f;box-shadow:3px 3px 0 #321311;min-width:0}
+.contact-page .contact-photo{display:block;width:110px;height:110px;overflow:hidden;border:2px solid var(--line);background:#080808}
+.contact-page .contact-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.contact-page .contact-info{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
+.contact-page .contact-description{font-family:Arial,sans-serif;font-size:16px;line-height:1.45;color:#fff;overflow-wrap:anywhere}
+.contact-page .contact-link{display:inline-block;margin-top:12px;font-family:Arial,sans-serif;font-size:14px;line-height:1.3;color:#fff;overflow-wrap:anywhere}
+.contact-page .contact-link:hover{color:#e04435;text-decoration:underline;text-decoration-color:#e04435}
+@media(max-width:600px){
+  .contact-page .contact-list{margin-top:16px;gap:10px}
+  .contact-page .contact-card{grid-template-columns:78px minmax(0,1fr);gap:12px;padding:9px}
+  .contact-page .contact-photo{width:78px;height:78px}
+  .contact-page .contact-description{font-size:14px}
+  .contact-page .contact-link{font-size:12px;margin-top:8px}
+}
