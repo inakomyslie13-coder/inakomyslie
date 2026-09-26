@@ -712,3 +712,53 @@
   .contact-page .contact-description{font-size:14px}
   .contact-page .contact-link{font-size:12px;margin-top:8px}
 }
+
+
+/* Клипы — мобильная версия: компактная кнопка YouTube и название под видео */
+@media (max-width: 900px) {
+  .page-content.clips-page > .clip-list > .clip-card {
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    height:auto!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+  .page-content.clips-page .clip-preview {
+    order:1!important;
+    flex:0 0 auto!important;
+  }
+  .page-content.clips-page .clip-title {
+    order:2!important;
+    display:block!important;
+    width:100%!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:6px 1px 0!important;
+    padding:0!important;
+    font-size:13px!important;
+    line-height:1.2!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+  }
+  .page-content.clips-page .youtube-link,
+  .page-content.clips-page .clip-note {
+    order:3!important;
+  }
+  .page-content.clips-page .youtube-link {
+    font-size:0!important;
+    width:max-content!important;
+    min-width:0!important;
+    min-height:26px!important;
+    margin:5px auto 0!important;
+    padding:4px 9px!important;
+  }
+  .page-content.clips-page .youtube-link::after {
+    content:"▶ YouTube";
+    font-family:Oswald,Arial,sans-serif!important;
+    font-size:11px!important;
+    line-height:1!important;
+  }
+}
