@@ -683,17 +683,7 @@
 
 /* Кнопка полного экрана в каждом клипе */
 .page-content.clips-page .clip-preview{position:relative!important}
-.page-content.clips-page .clip-fullscreen{
- position:absolute!important;right:6px!important;bottom:6px!important;z-index:5!important;
- display:flex!important;align-items:center!important;justify-content:center!important;
- width:30px!important;height:30px!important;padding:0!important;
- border:1px solid #fff0e5!important;border-radius:3px!important;
- background:rgba(80,18,13,.92)!important;color:#fff0e5!important;
- font: bold 21px/1 Arial,sans-serif!important;cursor:pointer!important;
- box-shadow:0 1px 4px rgba(0,0,0,.7)!important;
-}
-.page-content.clips-page .clip-fullscreen:hover{background:#a52b20!important;color:#fff!important}
-@media(max-width:900px){.page-content.clips-page .clip-fullscreen{width:28px!important;height:28px!important;right:5px!important;bottom:5px!important;font-size:19px!important}}
+
 
 
 /* Основа сайта: убираем подпись и доводим рамку до нижнего края */
