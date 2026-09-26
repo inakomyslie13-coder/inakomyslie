@@ -694,3 +694,11 @@
 }
 .page-content.clips-page .clip-fullscreen:hover{background:#a52b20!important;color:#fff!important}
 @media(max-width:900px){.page-content.clips-page .clip-fullscreen{width:28px!important;height:28px!important;right:5px!important;bottom:5px!important;font-size:19px!important}}
+
+
+/* Основа сайта: убираем подпись и доводим рамку до нижнего края */
+.home-page>footer,.inner-page>footer,.page-footer,footer{display:none!important;height:0!important;margin:0!important;padding:0!important;border:0!important}
+.home-page,.inner-page{height:100vh!important;min-height:100vh!important;padding-bottom:0!important}
+.home-layout,.page-layout{flex:1 1 auto!important;min-height:0!important;margin-bottom:0!important}
+.home-sidebar,.page-sidebar,.home-content,.page-content{border-bottom:2px solid var(--line)!important}
+@media(max-width:900px){.home-page,.inner-page{height:auto!important;min-height:100vh!important}.home-layout,.page-layout{min-height:calc(100vh - 1px)!important;margin-bottom:0!important}.home-sidebar,.page-sidebar,.home-content,.page-content{border-bottom:2px solid var(--line)!important}}
