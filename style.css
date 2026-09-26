@@ -776,7 +776,7 @@
   display:grid!important;
   grid-template-columns:110px minmax(0,1fr)!important;
   gap:18px!important;
-  align-items:center!important;
+  align-items:start!important;
   padding:4px 0!important;
   border:0!important;
   background:transparent!important;
@@ -795,9 +795,9 @@
   display:flex!important;
   flex-direction:column!important;
   align-items:flex-start!important;
-  justify-content:center!important;
+  justify-content:flex-start!important;
   min-width:0!important;
-  padding:2px 0!important;
+  padding:8px 0 2px!important;
 }
 .contact-page .contact-description{
   font-family:Arial,sans-serif!important;
