@@ -865,3 +865,26 @@
     object-fit: contain !important;
   }
 }
+
+
+/* Клипы — одинаковое положение кнопки YouTube на мобильных */
+@media (max-width: 900px) {
+  .page-content.clips-page > .clip-list > .clip-card {
+    display:flex !important;
+    flex-direction:column !important;
+  }
+  .page-content.clips-page .clip-title {
+    min-height:34px !important;
+    height:34px !important;
+    max-height:34px !important;
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+  }
+  .page-content.clips-page .youtube-link {
+    margin-top:5px !important;
+    align-self:center !important;
+    flex:0 0 27px !important;
+    height:27px !important;
+  }
+}
