@@ -318,3 +318,124 @@
   .clips-page>.clip-list .youtube-link,
   .clips-page>.clip-list .clip-note{font-size:8px!important}
 }
+
+
+/* Клипы: компактные карточки с крупным превью, Play и ссылкой */
+@media(min-width:901px){
+  .clips-page{
+    display:flex!important;
+    flex-direction:column!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+    padding:8px 2%!important;
+  }
+  .clips-page>.history-title{
+    flex:0 0 auto!important;
+    margin:0 0 8px!important;
+  }
+  .clips-page>.clip-list{
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    grid-template-rows:repeat(2,minmax(0,1fr))!important;
+    gap:9px 12px!important;
+    flex:1 1 0!important;
+    height:0!important;
+    min-height:0!important;
+    margin:0!important;
+    overflow:hidden!important;
+    align-content:stretch!important;
+  }
+  .clips-page>.clip-list>.clip-card{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:5px!important;
+    margin:0!important;
+    border:1px solid #4a2924!important;
+    background:#11100f!important;
+    box-shadow:2px 2px 0 #321311!important;
+    overflow:hidden!important;
+    text-align:center!important;
+  }
+  .clips-page>.clip-list .clip-preview{
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    height:clamp(68px,10.5vh,112px)!important;
+    min-height:0!important;
+    flex:0 0 auto!important;
+    aspect-ratio:auto!important;
+    margin:0!important;
+    grid-row:auto!important;
+    overflow:hidden!important;
+    background:#080808!important;
+  }
+  .clips-page>.clip-list .clip-preview video{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  .clips-page>.clip-list .clip-play{
+    display:flex!important;
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    transform:translate(-50%,-50%)!important;
+    width:38px!important;
+    height:38px!important;
+    font-size:18px!important;
+    border:2px solid #fff0e5!important;
+    border-radius:50%!important;
+    background:rgba(120,25,18,.9)!important;
+    color:#fff0e5!important;
+    align-items:center!important;
+    justify-content:center!important;
+    z-index:2!important;
+  }
+  .clips-page>.clip-list .clip-preview.playing .clip-play{display:none!important}
+  .clips-page>.clip-list .clip-title{
+    display:-webkit-box!important;
+    width:100%!important;
+    min-height:30px!important;
+    max-height:30px!important;
+    flex:0 0 auto!important;
+    margin:5px 0 1px!important;
+    padding:0 2px!important;
+    font-family:Oswald,Arial,sans-serif!important;
+    font-size:13px!important;
+    font-weight:400!important;
+    line-height:1.15!important;
+    white-space:normal!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    -webkit-line-clamp:2!important;
+    -webkit-box-orient:vertical!important;
+  }
+  .clips-page>.clip-list .youtube-link,
+  .clips-page>.clip-list .clip-note{
+    display:block!important;
+    width:100%!important;
+    min-height:16px!important;
+    flex:0 0 auto!important;
+    margin:2px 0 0!important;
+    padding:1px 0!important;
+    font-size:10px!important;
+    line-height:1.2!important;
+    color:#e04435!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .clips-page>.clip-list .youtube-link:hover{color:#fff!important;text-decoration:underline!important}
+}
+@media(min-width:901px) and (max-height:700px){
+  .clips-page>.clip-list .clip-preview{height:clamp(58px,9vh,78px)!important}
+  .clips-page>.clip-list .clip-title{font-size:12px!important;min-height:27px!important;max-height:27px!important}
+}
